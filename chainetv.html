@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TF1 Live</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            color: #e31b26; /* Couleur rouge TF1 */
+        }
+        .container {
+            margin-top: 20px;
+        }
+        .channel-icon {
+            cursor: pointer;
+            width: 100px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Regarder TF1 en Direct</h1>
+    <div class="container">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/TF1_Logo_2020.svg/1280px-TF1_Logo_2020.svg.png" 
+             alt="Logo TF1" class="channel-icon" onclick="playStream()">
+    </div>
+
+    <video id="video" width="640" height="360" controls style="display:none;">
+        <source src="https://live-tf1-hls.cdn-0.diff.tf1.fr/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaXAiOiI4Mi42Ny40OC41NiIsImNtY2QiOiIiLCJleHAiOjE3Mjk5NzM5MDYsImdpZCI6IjA0NmI5NTIzLTcwN2QtNDc2My04MWM2LWU0MzU1NDEyMTdkNSIsImlhdCI6MTcyOTk1OTUwNiwiaXNzIjoiZGVsaXZlcnkiLCJtYXhiIjowLCJzdGVtIjoiL291dC92MS83ODA1NDJmNTE2ZjE0M2ZjOGFkOWJmMTQ2MjIzMTZlNy90ZjEtY21hZiIsInN1YiI6IjA0NmI5NTIzLTcwN2QtNDc2My04MWM2LWU0MzU1NDEyMTdkNSJ9.WiW77C7ZpcZipoc4DD80MQoLWCMvzYO7fOfxt-2kbcg/out/v1/780542f516f143fc8ad9bf14622316e7/tf1-cmaf/index_1.m3u8" type="application/x-mpegURL">
+        Votre navigateur ne prend pas en charge la vidéo HTML5.
+    </video>
+
+    <audio id="audio" controls style="display:none;">
+        <source src="https://live-tf1-hls.cdn-0.diff.tf1.fr/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaXAiOiI4Mi42Ny40OC41NiIsImNtY2QiOiIiLCJleHAiOjE3Mjk5NzM5MDYsImdpZCI6IjA0NmI5NTIzLTcwN2QtNDc2My04MWM2LWU0MzU1NDEyMTdkNSIsImlhdCI6MTcyOTk1OTUwNiwiaXNzIjoiZGVsaXZlcnkiLCJtYXhiIjowLCJzdGVtIjoiL291dC92MS83ODA1NDJmNTE2ZjE0M2ZjOGFkOWJmMTQ2MjIzMTZlNy90ZjEtY21hZiIsInN1YiI6IjA0NmI5NTIzLTcwN2QtNDc2My04MWM2LWU0MzU1NDEyMTdkNSJ9.WiW77C7ZpcZipoc4DD80MQoLWCMvzYO7fOfxt-2kbcg/out/v1/780542f516f143fc8ad9bf14622316e7/tf1-cmaf/index_12_0.m3u8" type="audio/mpeg">
+        Votre navigateur ne prend pas en charge l'audio HTML5.
+    </audio>
+
+    <script>
+        function playStream() {
+            var video = document.getElementById('video');
+            var audio = document.getElementById('audio');
+            video.style.display = 'block';
+            audio.style.display = 'block';
+            video.play();
+            audio.play();
+        }
+    </script>
+
+</body>
+</html>
